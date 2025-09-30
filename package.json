@@ -1,0 +1,33 @@
+{
+  "name": "@ianpaschal/eslint-config",
+  "version": "1.0.0",
+  "description": "Shared ESLint config for TypeScript/React projects",
+  "main": "eslint.config.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ian Paschal",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "dependencies": {
+    "@eslint/js": ">=9.0.0",
+    "@stylistic/eslint-plugin": "^4.0.0",
+    "eslint-plugin-import-newlines": "^1.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "exports": {
+    ".": "./eslint.config.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "eslint.config.mjs"
+  ]
+}
