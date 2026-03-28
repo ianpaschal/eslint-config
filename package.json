@@ -4,7 +4,7 @@
   "description": "Shared ESLint config for TypeScript/React projects",
   "main": "eslint.config.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "npm publish && npm publish --registry https://npm.pkg.github.com"
   },
   "keywords": [],
   "author": "Ian Paschal",
