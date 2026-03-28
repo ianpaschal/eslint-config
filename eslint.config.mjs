@@ -1,12 +1,12 @@
 import js from '@eslint/js';
-import globals from 'globals';
 import stylistic from '@stylistic/eslint-plugin';
-import tseslint from 'typescript-eslint';
 import importNewlines from 'eslint-plugin-import-newlines';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export const base = [
   {
@@ -34,11 +34,11 @@ export const base = [
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/eol-last': ['error', 'always'],
       '@stylistic/implicit-arrow-linebreak': ['error', 'beside'],
+      '@stylistic/indent': ['error', 2],
       '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+      '@stylistic/lines-around-comment': ['error', { beforeLineComment: true }],
       '@stylistic/no-multi-spaces': 'error',
       '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
-      // FIXME: https://github.com/eslint-stylistic/eslint-stylistic/issues/915
-      // '@stylistic/indent': ['error', 2],
       '@stylistic/object-curly-spacing': ['error', 'always'],
       '@stylistic/quotes': ['error', 'single'],
       '@stylistic/semi': 'error',
@@ -47,15 +47,10 @@ export const base = [
       // Misc.
       'arrow-body-style': ['error', 'as-needed'],
       'curly': ['error'],
-      'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
+      'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
 
       // Plugin configurations
-      'import-newlines/enforce': ['error', 2],
-      // ENABLE LATER
-      // 'import-newlines/enforce': ['error', {
-      //   items: 2,
-      //   'max-len': 100,
-      // }],
+      'import-newlines/enforce': ['error', { items: 2,'max-len': 100 }],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': ['error', {
         'groups': [
@@ -77,6 +72,7 @@ export const typescript = tseslint.config({
     },
   },
   rules: {
+
     // Replace JS rules with TS rules
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', {
@@ -85,6 +81,7 @@ export const typescript = tseslint.config({
       'varsIgnorePattern': '^_',
     }],
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-empty-object-type': 'off',
   },
 });
 
@@ -114,6 +111,7 @@ export const react = [
       'react/jsx-key': 'off',
       'react/no-unescaped-entities': 'off',
       'react/react-in-jsx-scope': 'off',
+
       // ENABLE LATER
       // 'react/jsx-sort-props': ['error', {
       //   callbacksLast: true,

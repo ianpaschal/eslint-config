@@ -57,6 +57,16 @@ export default [
 ];
 ```
 
+### VS Code
+
+Add this to your project's `.vscode/settings.json` (required for the ESLint extension to recognize flat config):
+
+```json
+{
+  "eslint.useFlatConfig": true
+}
+```
+
 ## Exports
 
 | Export | Contents |
